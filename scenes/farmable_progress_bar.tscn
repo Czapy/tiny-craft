@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx05vdaefa4c2"]
+
+[ext_resource type="Theme" uid="uid://set726qp036y" path="res://base_theme.tres" id="1_6fwxl"]
+
+[node name="ProgressBar" type="ProgressBar"]
+anchors_preset = -1
+anchor_left = 0.101
+anchor_top = -0.094
+anchor_right = 1.091
+anchor_bottom = 0.079
+offset_left = -11.616
+offset_top = -10.496
+offset_right = -7.456
+offset_bottom = -9.264
+theme = ExtResource("1_6fwxl")
+max_value = 1.0
+show_percentage = false

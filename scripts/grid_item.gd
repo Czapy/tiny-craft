@@ -1,5 +1,5 @@
 class_name GridItem
-extends Sprite2D
+extends Node2D
 
 enum ItemType {WOOD, STONE}
 
@@ -19,4 +19,3 @@ func _ready() -> void:
 		.set_delay(randf_range(0, 0.5))\
 		.set_ease(Tween.EASE_IN_OUT)
 		#.set_trans(Tween.TRANS_CIRC)
-	pass
