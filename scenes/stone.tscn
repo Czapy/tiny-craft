@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xgw2chh13xdt"]
+
+[ext_resource type="Texture2D" uid="uid://c7huqltq0eqsp" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_y4q4d"]
+[ext_resource type="Script" path="res://scenes/stone.gd" id="2_7kqnl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ajh4"]
+radius = 6.08276
+
+[node name="Stone" type="Sprite2D"]
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("1_y4q4d")
+region_enabled = true
+region_rect = Rect2(128, 16, 16, 16)
+script = ExtResource("2_7kqnl")
+type = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0ajh4")
