@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://nxk686clvsid"]
+[gd_scene load_steps=6 format=3 uid="uid://nxk686clvsid"]
 
 [ext_resource type="Script" path="res://scenes/tree.gd" id="1_lkpyq"]
 [ext_resource type="Texture2D" uid="uid://c7huqltq0eqsp" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_wuwrj"]
+[ext_resource type="PackedScene" uid="uid://d0sg1iluq6g8i" path="res://scenes/wood.tscn" id="2_gb576"]
 [ext_resource type="PackedScene" uid="uid://bx05vdaefa4c2" path="res://scenes/farmable_progress_bar.tscn" id="3_kxqy8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqcon"]
@@ -9,6 +10,8 @@ radius = 12.0
 
 [node name="Tree" type="Node2D"]
 script = ExtResource("1_lkpyq")
+drop = ExtResource("2_gb576")
+label = "Tree"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -5.96046e-08)
@@ -18,11 +21,10 @@ offset = Vector2(0, -5.62)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -2.92687)
-scale = Vector2(0.525, 0.525)
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(0, -5.57499)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(0, -0.139286)
 shape = SubResource("CapsuleShape2D_pqcon")
 

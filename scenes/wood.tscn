@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0sg1iluq6g8i"]
+
+[ext_resource type="Script" path="res://scenes/wood.gd" id="1_4ak2l"]
+[ext_resource type="Texture2D" uid="uid://c7huqltq0eqsp" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="2_r2umj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0x6c"]
+atlas = ExtResource("2_r2umj")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlw1f"]
+size = Vector2(31.9643, 19.1071)
+
+[node name="Wood" type="Node2D"]
+script = ExtResource("1_4ak2l")
+type = 2
+label = "Wood Log"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.585, 0.585)
+texture = SubResource("AtlasTexture_f0x6c")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(0, -2.92687)
+scale = Vector2(0.525, 0.525)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-7.10543e-15, 3.67023)
+shape = SubResource("RectangleShape2D_jlw1f")

@@ -1,17 +1,16 @@
-[gd_scene load_steps=5 format=4 uid="uid://cl8s3emtgathu"]
+[gd_scene load_steps=7 format=4 uid="uid://cl8s3emtgathu"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_5htq0"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_jesl0"]
 [ext_resource type="TileSet" uid="uid://chtdj747ecvhj" path="res://assets/tileset.tres" id="1_ktedg"]
 [ext_resource type="Script" path="res://scripts/land.gd" id="2_fhlpy"]
+[ext_resource type="Script" path="res://scripts/hover_manager.gd" id="5_qmhsp"]
+[ext_resource type="Script" path="res://scripts/recipe_manager.gd" id="6_te0r1"]
 
 [node name="Root" type="Node2D"]
-
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("1_5htq0")
+script = ExtResource("1_jesl0")
 
 [node name="Main" type="Node2D" parent="."]
-script = ExtResource("1_jesl0")
 
 [node name="Water" type="TileMapLayer" parent="Main"]
 z_index = -101
@@ -20,10 +19,37 @@ tile_set = ExtResource("1_ktedg")
 
 [node name="Land" type="TileMapLayer" parent="Main"]
 z_index = -100
-tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wAAAAAAAAEAAAAAAP//AAABAAAAAAAAAAAAAAAFAAUAAAABAP//AAACAAAAAAABAAAAAAACAAEAAAD//wEAAAAAAAIAAAAAAAEAAAABAAIAAAABAAEAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wAAAAAAAAEAAAAAAP//AAABAAAAAAABAP//AAACAAAAAAABAAAAAAACAAEAAAD//wEAAAAAAAIAAAAAAAEAAAABAAIAAAABAAEAAAACAAIAAAAAAAAAAAAFAAUAAAA=")
 tile_set = ExtResource("1_ktedg")
 script = ExtResource("2_fhlpy")
 
 [node name="Camera2D" type="Camera2D" parent="Main"]
 offset = Vector2(8, 8)
 zoom = Vector2(3.69, 3.69)
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_5htq0")
+
+[node name="HoverManager" type="Node2D" parent="."]
+script = ExtResource("5_qmhsp")
+
+[node name="RecipeManager" type="Node2D" parent="."]
+script = ExtResource("6_te0r1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -157.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+auto_height = true

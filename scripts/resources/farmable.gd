@@ -3,7 +3,7 @@ extends GridItem
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 
-@export var drop: Node2D
+@export var drop: PackedScene
 @export_range(0.0, 5.0, 0.1) var mining_time = 1.0
 
 var timer: SceneTreeTimer
@@ -23,3 +23,4 @@ func _on_mining_finished():
 	progress_bar.visible = false
 	progress_bar.value = 0
 	# TODO emit spawn drop, game manager should decide on which free neighbouring tile to put it
+	SignalBus.mining_finished.emit(self)
