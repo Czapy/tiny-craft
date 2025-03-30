@@ -9,7 +9,7 @@ extends Node2D
 	GridItem.ItemType.AXE: {
 		Vector2i(0, 0): GridItem.ItemType.STONE,
 		Vector2i(-1, 0): GridItem.ItemType.STONE,
-		Vector2i(1, 0): GridItem.ItemType.STONE,
+		Vector2i(-1, 1): GridItem.ItemType.STONE,
 		Vector2i(0, 1): GridItem.ItemType.STICK,
 		Vector2i(0, 2): GridItem.ItemType.STICK
 	}
